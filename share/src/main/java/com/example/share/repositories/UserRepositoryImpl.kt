@@ -2,8 +2,15 @@ package com.example.share.repositories
 
 import com.example.share.entities.User
 
-class UserRepositoryImpl: UserRepository {
+internal class UserRepositoryImpl: UserRepository {
 
-    override fun login(login: String, password: String): User = User(login, password)
+    private var _currentUser: User? = null
 
+    override val currentUser: User? = _currentUser
+
+
+    override fun login(login: String, password: String): User? {
+        _currentUser = User(login, password)
+        return currentUser
+    }
 }

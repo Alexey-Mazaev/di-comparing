@@ -4,5 +4,7 @@ import com.example.share.entities.User
 
 interface UserRepository {
 
-    fun login(login: String, password: String): User
+    val currentUser: User?
+
+    fun login(login: String, password: String): User?
 }

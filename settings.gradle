@@ -16,3 +16,4 @@ rootProject.name = "di-comparing"
 include ':app'
 include ':share'
 include ':onboarding'
+include ':feed'

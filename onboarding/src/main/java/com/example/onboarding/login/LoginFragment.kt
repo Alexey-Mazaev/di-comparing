@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.onboarding.R
 import com.example.onboarding.databinding.LoginFragmentBinding
+import com.example.share.ui.Navigator
 
 class LoginFragment: Fragment(R.layout.login_fragment) {
 
@@ -32,6 +33,12 @@ class LoginFragment: Fragment(R.layout.login_fragment) {
                 userName = binding.username.text.toString(),
                 password = binding.password.text.toString()
             )
+        }
+
+        viewModel.loginSuccess.observe(viewLifecycleOwner) { loginSuccess ->
+            if (loginSuccess) {
+                (requireActivity() as Navigator).showFeed()
+            }
         }
     }
 
