@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.share.repositories.UserRepository
+import javax.inject.Inject
 
-class LoginViewModel(
+class LoginViewModel @Inject constructor (
     private val userRepository: UserRepository,
 ): ViewModel() {
 
