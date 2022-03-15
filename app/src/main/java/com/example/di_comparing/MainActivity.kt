@@ -5,7 +5,9 @@ import android.os.Bundle
 import com.example.feed.FeedFragment
 import com.example.onboarding.login.LoginFragment
 import com.example.share.ui.Navigator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), Navigator {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

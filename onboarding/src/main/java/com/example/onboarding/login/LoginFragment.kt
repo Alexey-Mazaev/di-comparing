@@ -5,16 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.onboarding.R
 import com.example.onboarding.databinding.LoginFragmentBinding
 import com.example.share.ui.Navigator
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LoginFragment: Fragment(R.layout.login_fragment) {
 
     private var _binding: LoginFragmentBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: LoginViewModel
+    private val viewModel: LoginViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

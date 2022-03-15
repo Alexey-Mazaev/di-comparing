@@ -11,6 +11,6 @@ internal class UserRepositoryImpl: UserRepository {
 
     override fun login(login: String, password: String): User? {
         _currentUser = User(login, password)
-        return currentUser
+        return _currentUser
     }
 }

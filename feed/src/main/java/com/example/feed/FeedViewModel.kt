@@ -5,9 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.share.entities.User
 import com.example.share.repositories.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.scopes.ViewModelScoped
+import javax.inject.Inject
 
-class FeedViewModel(
-    private val userRepository: UserRepository
+@HiltViewModel
+class FeedViewModel @Inject constructor(
+    userRepository: UserRepository
 ): ViewModel() {
 
     private val _currentUser: MutableLiveData<User> = MutableLiveData()

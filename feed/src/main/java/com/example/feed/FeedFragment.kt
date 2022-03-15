@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.feed.databinding.FeedFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class FeedFragment: Fragment(R.layout.feed_fragment) {
 
     private var _binding: FeedFragmentBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: FeedViewModel
+    private val viewModel: FeedViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
