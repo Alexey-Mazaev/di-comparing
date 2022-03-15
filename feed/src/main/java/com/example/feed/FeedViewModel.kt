@@ -18,6 +18,6 @@ class FeedViewModel @Inject constructor(
     val currentUser: LiveData<User> = _currentUser
 
     init {
-        _currentUser.value = userRepository.currentUser
+        _currentUser.value = userRepository.getCurrentUser()
     }
 }
